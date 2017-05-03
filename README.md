@@ -5,7 +5,7 @@ The first way is using Inheritance. We use `InheritedFakeFragment` as base Fragm
 
 The second way is using Proxy. We create a proxy fragment `ProxyFakeFragment` and use it as a proxy to create the real Fragment.
 
-##Using `InheritedFakeFragment` example:
+## Using `InheritedFakeFragment` example:
 
 We need to change to `OriginFragment` to `InheritedLazyFragment` by changing `onCreateView` and `onViewCreated`. 
 
@@ -35,7 +35,7 @@ public class InheritedLazyFragment extends InheritedFakeFragment {
 ```
 Fragment creation is the same as `OriginFragment` : `return InheritedLazyFragment.newInstance("InheritedLazyFragment", position);`.
 
-##Using `ProxyFakeFragment` example:
+## Using `ProxyFakeFragment` example:
 
 The `OriginFragment` don't need to change and the creation process need to use proxy as :
 ```java
