@@ -12,16 +12,6 @@ We need to change to `OriginFragment` to `InheritedLazyFragment` by changing `on
 ```java
 public class InheritedLazyFragment extends InheritedFakeFragment {
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mFragmentMsg = getArguments().getString(FRAGMENT_MSG);
-            mPos = getArguments().getInt(FRAGMENT_POS);
-        }
-        Log.d("FragmentTest" + mPos, "Pos: " + mPos + " , " + "onCreate");
-    }
-
-    @Override
     public View onLazyCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -30,6 +20,12 @@ public class InheritedLazyFragment extends InheritedFakeFragment {
         content.setText(mFragmentMsg + mPos);
         Log.d("FragmentTest" + mPos, "Pos: " + mPos + " , " + "onLazyCreateView");
         return view;
+    }
+    
+    @Override
+    public void onLazyViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Log.d("FragmentTest" + mPos, "Pos: " + mPos + " , " + "onLazyViewCreated");
     }
 }
 ```
