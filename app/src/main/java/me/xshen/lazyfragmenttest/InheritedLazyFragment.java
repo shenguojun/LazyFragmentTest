@@ -24,11 +24,6 @@ public class InheritedLazyFragment extends InheritedFakeFragment {
         // Required empty public constructor
     }
 
-    @SuppressWarnings("unused")
-    public static InheritedLazyFragment newInstance() {
-        return new InheritedLazyFragment();
-    }
-
     public static InheritedLazyFragment newInstance(String msg, int position) {
         InheritedLazyFragment fragment = new InheritedLazyFragment();
         Bundle args = new Bundle();
