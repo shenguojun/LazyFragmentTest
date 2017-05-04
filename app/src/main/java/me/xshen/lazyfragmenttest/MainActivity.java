@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
                         return InheritedLazyFragment.newInstance("InheritedLazyFragment", position);
                     case 2:
                         Bundle bundle = new Bundle();
-                        bundle.putString(InheritedLazyFragment.FRAGMENT_MSG, "ProxyLazyFragment");
-                        bundle.putInt(InheritedLazyFragment.FRAGMENT_POS, position);
+                        bundle.putString(OriginFragment.FRAGMENT_MSG, "ProxyLazyFragment");
+                        bundle.putInt(OriginFragment.FRAGMENT_POS, position);
                         return ProxyFakeFragment.newInstance(OriginFragment.class.getName(), bundle);
                     case 3:
                     default:

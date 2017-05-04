@@ -47,6 +47,7 @@ public abstract class InheritedFakeFragment extends Fragment {
 
     /**
      * 获取真实的fragment是否已经初始化view
+     *
      * @return 已经初始化view返回true，否则返回false
      */
     @SuppressWarnings("unused")
@@ -62,13 +63,20 @@ public abstract class InheritedFakeFragment extends Fragment {
 
     /**
      * 用于替代真实Fragment的onCreateView，在真正获取到用户焦点后才会调用
-     * @param inflater
-     * @param container
-     * @param savedInstanceState
-     * @return
+     *
+     * @param inflater           - The LayoutInflater object that can be used to inflate any views in the fragment,
+     * @param container          - If non-null, this is the parent view that the fragment's UI should be attached to. The fragment should not add the view itself, but this can be used to generate the LayoutParams of the view.
+     * @param savedInstanceState - If non-null, this fragment is being re-constructed from a previous saved state as given here.
+     * @return Return the View for the fragment's UI, or null.
      */
     protected abstract View onLazyCreateView(LayoutInflater inflater, ViewGroup container, @Nullable Bundle savedInstanceState);
 
+    /**
+     * 用来代替真实Fragment的onViewCreated，在真正获得用户焦点并且{@link #onLazyViewCreated(View, Bundle)}
+     *
+     * @param view               - The View returned by onCreateView(LayoutInflater, ViewGroup, Bundle).
+     * @param savedInstanceState - If non-null, this fragment is being re-constructed from a previous saved state as given here.
+     */
     protected abstract void onLazyViewCreated(View view, @Nullable Bundle savedInstanceState);
 
 }

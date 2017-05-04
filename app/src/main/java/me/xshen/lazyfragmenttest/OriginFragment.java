@@ -15,8 +15,8 @@ import android.widget.TextView;
  * 正常的Fragment
  */
 public class OriginFragment extends Fragment {
-    private static final String FRAGMENT_MSG = "FRAGMENT_MSG";
-    private static final String FRAGMENT_POS = "FRAGMENT_POS";
+    public static final String FRAGMENT_MSG = "FRAGMENT_MSG";
+    public static final String FRAGMENT_POS = "FRAGMENT_POS";
 
     private String mFragmentMsg;
     private int mPos;
@@ -56,6 +56,12 @@ public class OriginFragment extends Fragment {
     }
 
     @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Log.d("FragmentTest" + mPos, "Pos: " + mPos + " , " + "onViewCreated");
+    }
+
+    @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Log.d("FragmentTest" + mPos, "Pos: " + mPos + " , " + "onActivityCreated");
@@ -71,12 +77,6 @@ public class OriginFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         Log.d("FragmentTest" + mPos, "Pos: " + mPos + " , " + "onDetach");
-    }
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        Log.d("FragmentTest" + mPos, "Pos: " + mPos + " , " + "onViewCreated");
     }
 
     @Override

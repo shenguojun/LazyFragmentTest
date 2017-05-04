@@ -61,6 +61,12 @@ public class InheritedLazyFragment extends InheritedFakeFragment {
     }
 
     @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Log.d("FragmentTest" + mPos, "Pos: " + mPos + " , " + "onActivityCreated");
+    }
+
+    @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         Log.d("FragmentTest" + mPos, "Pos: " + mPos + " , " + "onAttach");
@@ -70,12 +76,6 @@ public class InheritedLazyFragment extends InheritedFakeFragment {
     public void onDetach() {
         super.onDetach();
         Log.d("FragmentTest" + mPos, "Pos: " + mPos + " , " + "onDetach");
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        Log.d("FragmentTest" + mPos, "Pos: " + mPos + " , " + "onActivityCreated");
     }
 
     @Override
