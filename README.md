@@ -40,3 +40,5 @@ bundle.putString(InheritedLazyFragment.FRAGMENT_MSG, "ProxyLazyFragment");
 bundle.putInt(InheritedLazyFragment.FRAGMENT_POS, position);
 return ProxyFakeFragment.newInstance(OriginFragment.class.getName(), bundle);
 ```
+
+中文教程请参考：[如何优化Androd App启动速度](http://www.jianshu.com/p/bef74a4b6d5e)
