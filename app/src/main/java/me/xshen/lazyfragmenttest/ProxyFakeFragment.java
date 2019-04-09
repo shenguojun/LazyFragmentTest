@@ -129,7 +129,7 @@ public class ProxyFakeFragment extends Fragment {
             getChildFragmentManager()
                     .beginTransaction()
                     .add(R.id.fake_fragment_container, realFragment)
-                    .commit();
+                    .commitAllowingStateLoss();
             getChildFragmentManager().executePendingTransactions();
             isRealFragmentAdded = true;
         }
